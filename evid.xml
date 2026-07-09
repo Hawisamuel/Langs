@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="forensic-report.xsl"?>
+
+<!--
+================================================================================
+FORENSIC EVIDENCE REPORT - PKI EDITION
+Generated: 2026-05-26T10:30:00Z
+Case: Digital Forensics Investigation - Unauthorized Access
+================================================================================
+-->
+
+<ForensicReport xmlns="http://forensics.example.com/schema/1.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://forensics.example.com/schema/1.0 forensic-schema.xsd"
+                reportId="FR-2026-05-26-001"
+                version="1.0">
+
+    <!-- ============================================================ -->
+    <!-- CASE INFORMATION                                             -->
+    <!-- ============================================================ -->
+    <CaseInformation>
+        <CaseID>CID-2026-001</CaseID>
+        <CaseTitle>Unauthorized Access Investigation - Financial Sector</CaseTitle>
+        <Description>
+            Investigation into unauthorized access to financial systems.
+            Evidence collected includes system logs, network captures,
+            and user activity records.
+        </Description>
+        <Status>Active</Status>
+        <Priority>High</Priority>
+        <Classification>Confidential</Classification>
+        
+        <DateOpened>2026-05-20T09:00:00Z</DateOpened>
+        <DateClosed xsi:nil="true" />
+        
+        <LeadInvestigator>
+            <Name>Dr. Sarah Johnson</Name>
+            <BadgeNumber>FX-8892</BadgeNumber>
+            <Email>sarah.johnson@forensics.gov</Email>
+            <Organization>National Cyber Forensics Unit</Organization>
+        </LeadInvestigator>
+        
+        <AssignedTeam>
+            <Member>
+                <Name>Hsolutions</Name>
+                <Role>Digital Forensics Analyst</Role>
+                <Certification>CFCE, EnCE</Certification>
+            </Member>
+            <Member>
+                <Name>Jane Smith</Name>
+                <Role>PKI Security Specialist</Role>
+                <Certification>CISSP, CISA</Certification>
+            </Member>
+            <Member>
+                <Name>Robert Chen</Name>
+                <Role>Network Forensics Engineer</Role>
+                <Certification>GCIA, GCFA</Certification>
+            </Member>
+        </AssignedTeam>
+    </CaseInformation>
+
+    <!-- ============================================================ -->
+    <!-- PKI INFRASTRUCTURE INFORMATION                                -->
+    <!-- ============================================================ -->
+    <PKIInfrastructure>
+        <CertificateAuthority>
+            <Name>Forensic Evidence CA</Name>
+            <Organization>National Forensics Authority</Organization>
+            <Country>US</Country>
+            <CAFingerprint>
+                A1B2C3D4E5F6789012345678901234567890ABCDEF1234567890ABCDEF
+            </CAFingerprint>
+            <CAValidity>
+                <NotBefore>2026-01-01T00:00:00Z</NotBefore>
+                <NotAfter>2027-12-31T23:59:59Z</NotAfter>
+            </CAValidity>
+            <CRLDistributionPoint>http://crl.forensics.gov/forensic-ca.crl</CRLDistributionPoint>
+            <OCSPResponder>http://ocsp.forensics.gov</OCSPResponder>
+        </CertificateAuthority>
+        
+        <InvestigatorCertificate>
+            <Subject>
+                <CommonName>Dr. Sarah Johnson</CommonName>
+                <Organization>National Cyber Forensics Unit</Organization>
+                <OrganizationalUnit>Digital Evidence Division</OrganizationalUnit>
+                <Country>US</Country>
+                <State>California</State>
+                <Locality>San Francisco</Locality>
+                <Email>sarah.johnson@forensics.gov</Email>
+            </Subject>
+            
+            <Issuer>
+                <CommonName>Forensic Evidence CA</CommonName>
+                <Organization>National Forensics Authority</Organization>
+                <Country>US</Country>
+            </Issuer>
+            
+            <SerialNumber>0x3F8A2B1C4D5E6F7A</SerialNumber>
+            <Fingerprint>
+                <SHA256>5F8A2B1C3D4E5F6789012345678901234567890ABCDEF1234567890ABCDEF</SHA256>
+                <SHA1>1A2B3C4D5E6F7890ABCDEF1234567890ABCDEF12</SHA1>
+            </Fingerprint>
+            
+            <Validity>
+                <NotBefore>2026-01-15T00:00:00Z</NotBefore>
+                <NotAfter>2027-01-15T23:59:59Z</NotAfter>
+            </Validity>
+            
+            <KeyUsage>
+                <DigitalSignature>true</DigitalSignature>
+                <KeyEncipherment>false</KeyEncipherment>
+                <DataEncipherment>false</DataEncipherment>
+                <KeyAgreement>false</KeyAgreement>
+                <KeyCertSign>false</KeyCertSign>
+                <CRLSign>false</CRLSign>
+            </KeyUsage>
+            
+            <ExtendedKeyUsage>
+                <ClientAuthentication>true</ClientAuthentication>
+                <CodeSigning>false</CodeSigning>
+                <EmailProtection>true</EmailProtection>
+                <TimeStamping>true</TimeStamping>
+            </ExtendedKeyUsage>
+            
+            <PublicKey>
+                <Algorithm>RSA</Algorithm>
+                <KeySize>2048</KeySize>
+                <Exponent>65537</Exponent>
+                <!-- Base64 encoded public key (truncated for display) -->
+                <Modulus>
+                    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu7QkZ5h9L2M3nP6R...
+                    (2048-bit modulus truncated for readability)
+                </Modulus>
+            </PublicKey>
+        </InvestigatorCertificate>
+        
+        <TimeStampingAuthority>
+            <Name>National Time Stamping Authority</Name>
+            <TSAPolicy>RFC 3161 Compliant</TSAPolicy>
+            <TSUrl>http://tsa.forensics.gov</TSUrl>
+        </TimeStampingAuthority>
+    </PKIInfrastructure>
+
+    <!-- ============================================================ -->
+    <!-- EVIDENCE COLLECTION                                           -->
+    <!-- ============================================================ -->
+    <EvidenceCollection>
+        <CollectionMethod>Forensic Imaging (Hardware Write-Blocker)</CollectionMethod>
+        <CollectionDate>2026-05-25T14:30:00Z</CollectionDate>
+        <CollectionLocation>
+            <Site>Financial Data Center - Room 402</Site>
+            <Address>123 Main Street, San Francisco, CA 94105</Address>
+            <Coordinates>
+                <Latitude>37.7749</Latitude>
+                <Longitude>-122.4194</Longitude>
+            </Coordinates>
+        </CollectionLocation>
+        
+        <SeizedDevices>
+            <Device>
+                <DeviceID>DEV-001</DeviceID>
+                <Type>Workstation</Type>
+                <Make>Dell</Make>
+                <Model>OptiPlex 7080</Model>
+                <SerialNumber>ABC123DEF456</SerialNumber>
+                <Hostname>FIN-SRV-01</Hostname>
+                <IPAddress>192.168.1.100</IPAddress>
+                <MACAddress>00:1A:2B:3C:4D:5E</MACAddress>
+                <OperatingSystem>Windows 10 Enterprise</OperatingSystem>
+                <Storage>
+                    <Drive>
+                        <Label>C:</Label>
+                        <Size>512 GB</Size>
+                        <Type>SSD</Type>
+                        <FileSystem>NTFS</FileSystem>
+                        <Encryption>BitLocker (Enabled)</Encryption>
+                        <EncryptionKeyID>BK-2026-001</EncryptionKeyID>
+                    </Drive>
+                    <Drive>
+                        <Label>D:</Label>
+                        <Size>2 TB</Size>
+                        <Type>HDD</Type>
+                        <FileSystem>NTFS</FileSystem>
+                        <Encryption>BitLocker (Enabled)</Encryption>
+                        <EncryptionKeyID>BK-2026-001</EncryptionKeyID>
+                    </Drive>
+                </Storage>
+            </Device>
+            
+            <Device>
+                <DeviceID>DEV-002</DeviceID>
+                <Type>Mobile Device</Type>
+                <Make>Apple</Make>
+                <Model>iPhone 14 Pro</Model>
+                <SerialNumber>FGH789IJK012</SerialNumber>
+                <IMEI>123456789012345</IMEI>
+                <PhoneNumber>+1 (555) 123-4567</PhoneNumber>
+                <OperatingSystem>iOS 17.4</OperatingSystem>
+                <Encryption>iOS FileVault (Enabled)</Encryption>
+                <EncryptionKeyID>BK-2026-002</EncryptionKeyID>
+            </Device>
+        </SeizedDevices>
+    </EvidenceCollection>
+
+    <!-- ============================================================ -->
+    <!-- EVIDENCE ITEMS                                                -->
+    <!-- ============================================================ -->
+    <EvidenceItems>
+
+        <!-- EVIDENCE ITEM 1: SYSTEM LOGS -->
+        <EvidenceItem id="EVID-20260525-001">
+            <Type>System Logs</Type>
+            <Description>Windows Event Logs showing unauthorized access attempts</Description>
+            <Source>DEV-001 (FIN-SRV-01)</Source>
+            
+            <CollectionDetails>
+                <CollectedBy>John Doe</CollectedBy>
+                <CollectionTime>2026-05-25T15:00:00Z</CollectionTime>
+                <CollectionMethod>FTK Imager (Read-Only)</CollectionMethod>
+                <ImageHash>
+                    <Algorithm>SHA-256</Algorithm>
+                    <Value>3F8A2B1C4D5E6F7890ABCDEF1234567890ABCDEF1234567890ABCDEF1234</Value>
+                </ImageHash>
+                <ImageSize>2.4 GB</ImageSize>
+            </CollectionDetails>
+            
+            <CryptographicProtection>
+                <!-- Digital Signature of the evidence -->
+                <Signature>
+                    <Algorithm>RSA-PSS</Algorithm>
+                    <Value>
+                        MIIB2QYJKoZIhvcNAQcCoIIByjCCAcYCAQExDzANBglghkgBZQMEAgEF...
+                        (Base64 encoded signature)
+                    </Value>
+                    <Timestamp>
+                        <Time>2026-05-25T15:05:00Z</Time>
+                        <TSA>National Time Stamping Authority</TSA>
+                        <TSAPolicy>RFC 3161</TSAPolicy>
+                    </Timestamp>
+                </Signature>
+                
+                <!-- Integrity Hash -->
+                <Hash>
+                    <Algorithm>SHA-256</Algorithm>
+                    <Value>3F8A2B1C4D5E6F7890ABCDEF1234567890ABCDEF1234567890ABCDEF1234</Value>
+                    <Verified>true</Verified>
+                    <VerificationTime>2026-05-26T08:00:00Z</VerificationTime>
+                </Hash>
+                
+                <!-- Certificate Chain -->
+                <CertificateChain>
+                    <Certificate>
+                        <Subject>Dr. Sarah Johnson</Subject>
+                        <Fingerprint>5F8A2B1C3D4E5F6789012345678901234567890ABCDEF1234567890ABCDEF</Fingerprint>
+                        <Type>End-Entity</Type>
+                    </Certificate>
+                    <Certificate>
+                        <Subject>Forensic Evidence CA</Subject>
+                        <Fingerprint>A1B2C3D4E5F6789012345678901234567890ABCDEF1234567890ABCDEF</Fingerprint>
+                        <Type>Intermediate</Type>
+                    </Certificate>
+                    <Certificate>
+                        <Subject>Root CA</Subject>
+                        <Fingerprint>9C8D7E6F5A4B3C2D1E0F9A8B7C6D5E4F3A2B1C0D9E8F7A6B5C4D3E2F1A0B</Fingerprint>
+                        <Type>Root</Type>
+                    </Certificate>
+                </CertificateChain>
+                
+                <!-- Key Escrow Information -->
+                <KeyEscrow>
+                    <KeyID>BK-2026-001</KeyID>
+                    <Location>National Forensics Key Escrow Facility</Location>
+                    <AccessRequired>Court Order Required</AccessRequired>
+                    <EscrowAgent>Jane Smith</EscrowAgent>
+                </KeyEscrow>
+            </CryptographicProtection>
+            
+            <!-- Chain of Custody -->
+            <ChainOfCustody>
+                <Entry>
+                    <Sequence>1</Sequence>
+                    <Timestamp>2026-05-25T14:30:00Z</Timestamp>
+                    <Handler>John Doe</Handler>
+                    <Action>Collected</Action>
+                    <Location>Data Center - Room 402</Location>
+                    <Notes>Seized device with write-blocker. Created forensic image.</Notes>
+                    <SignedBy>John Doe</SignedBy>
+                    <Signature>
+                        <!-- Digital signature of custody entry -->
+                    </Signature>
+                </Entry>
+                
+                <Entry>
+                    <Sequence>2</Sequence>
+                    <Timestamp>2026-05-25T16:00:00Z</Timestamp>
+                    <Handler>Jane Smith</Handler>
+                    <Action>Transferred</Action>
+                    <Location>Forensics Lab - Evidence Storage</Location>
+                    <Notes>Transferred for secure storage and analysis</Notes>
+                    <SignedBy>Jane Smith</SignedBy>
+                    <Signature>
+                        <!-- Digital signature of custody entry -->
+                    </Signature>
+                </Entry>
+                
+                <Entry>
+                    <Sequence>3</Sequence>
+                    <Timestamp>2026-05-26T08:00:00Z</Timestamp>
+                    <Handler>Robert Chen</Handler>
+                    <Action>Analyzed</Action>
+                    <Location>Forensics Lab - Analysis Station 3</Location>
+                    <Notes>Performed log analysis. Extracted 256 relevant events.</Notes>
+                    <SignedBy>Robert Chen</SignedBy>
+                    <Signature>
+                        <!-- Digital signature of custody entry -->
+                    </Signature>
+                </Entry>
+            </ChainOfCustody>
+            
+            <!-- Evidence Analysis Results -->
+            <AnalysisResults>
+                <Summary>Found 256 unauthorized access attempts from IP range 10.0.0.0/24</Summary>
+                <KeyFindings>
+                    <Finding>
+                        <Description>Multiple failed login attempts for admin account</Description>
+                        <Count>156</Count>
+                        <TimeRange>
+                            <Start>2026-05-24T00:00:00Z</Start>
+                            <End>2026-05-25T00:00:00Z</End>
+                        </TimeRange>
+                        <Severity>High</Severity>
+                    </Finding>
+                    <Finding>
+                        <Description>Successful login from suspicious IP after brute force</Description>
+                        <Count>1</Count>
+                        <TimeRange>
+                            <Start>2026-05-25T03:15:00Z</Start>
+                            <End>2026-05-25T03:16:00Z</End>
+                        </TimeRange>
+                        <Severity>Critical</Severity>
+                    </Finding>
+                </KeyFindings>
+                
+                <SourceIPs>
+                    <IP>10.0.0.5</IP>
+                    <IP>10.0.0.12</IP>
+                    <IP>10.0.0.23</IP>
+                    <IP>10.0.0.45</IP>
+                    <IP>10.0.0.67</IP>
+                </SourceIPs>
+                
+                <Timeline>
+                    <Event>
+                        <Timestamp>2026-05-24T08:15:00Z</Timestamp>
+                        <Description>First failed login attempt detected</Description>
+                    </Event>
+                    <Event>
+                        <Timestamp>2026-05-25T03:15:00Z</Timestamp>
+                        <Description>Successful unauthorized access after 15,000 attempts</Description>
+                    </Event>
+                    <Event>
+                        <Timestamp>2026-05-25T03:20:00Z</Timestamp>
+                        <Description>Suspicious data exfiltration activity detected</Description>
+                    </Event>
+                </Timeline>
+            </AnalysisResults>
+            
+            <!-- Evidence File Details -->
+            <Files>
+                <File>
+                    <Name>Security.evtx</Name>
+                    <Path>C:\Windows\System32\winevt\Logs\Security.evtx</Path>
+                    <Size>256 MB</Size>
+                    <Hash>
+                        <Algorithm>SHA-256</Algorithm>
+                        <Value>7A8B9C0D1E2F3A4B5C6D7E8F9A0B1C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F</Value>
+                    </Hash>
+                    <CreationTime>2026-05-20T00:00:00Z</CreationTime>
+                    <ModifiedTime>2026-05-25T03:20:00Z</ModifiedTime>
+                </File>
+                <File>
+                    <Name>System.evtx</Name>
+                    <Path>C:\Windows\System32\winevt\Logs\System.evtx</Path>
+                    <Size>128 MB</Size>
+                    <Hash>
+                        <Algorithm>SHA-256</Algorithm>
+                        <Value>8B9C0D1E2F3A4B5C6D7E8F9A0B1C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A8</Value>
+                    </Hash>
+                    <CreationTime>2026-05-20T00:00:00Z</CreationTime>
+                    <ModifiedTime>2026-05-25T03:20:00Z</ModifiedTime>
+                </File>
+            </Files>
+        </EvidenceItem>
+
+        <!-- EVIDENCE ITEM 2: NETWORK CAPTURE -->
+        <EvidenceItem id="EVID-20260525-002">
+            <Type>Network Packet Capture</Type>
+            <Description>PCAP file containing network traffic during the incident</Description>
+            <Source>Network Tap - Core Switch</Source>
+            
+            <CollectionDetails>
+                <CollectedBy>Robert Chen</CollectedBy>
+                <CollectionTime>2026-05-25T16:30:00Z</CollectionTime>
+                <CollectionMethod>Wireshark (Promiscuous Mode)</CollectionMethod>
+                <ImageHash>
+                    <Algorithm>SHA-256</Algorithm>
+                    <Value>9C0D1E2F3A4B5C6D7E8F9A0B1C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A8B9C</Value>
+                </ImageHash>
+                <ImageSize>1.8 GB</ImageSize>
+            </CollectionDetails>
+            
+            <CryptographicProtection>
+                <Signature>
+                    <Algorithm>RSA-PSS</Algorithm>
+                    <Value>
+                        MIIB2QYJKoZIhvcNAQcCoIIByjCCAcYCAQExDzANBglghkgBZQMEAgEF...
+                    </Value>
+                    <Timestamp>
+                        <Time>2026-05-25T16:35:00Z</Time>
+                        <TSA>National Time Stamping Authority</TSA>
+                    </Timestamp>
+                </Signature>
+                <Hash>
+                    <Algorithm>SHA-256</Algorithm>
+                    <Value>9C0D1E2F3A4B5C6D7E8F9A0B1C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A8B9C</Value>
+                    <Verified>true</Verified>
+                    <VerificationTime>2026-05-26T08:30:00Z</VerificationTime>
+                </Hash>
+            </CryptographicProtection>
+            
+            <ChainOfCustody>
+                <Entry>
+                    <Sequence>1</Sequence>
+                    <Timestamp>2026-05-25T16:30:00Z</Timestamp>
+                    <Handler>Robert Chen</Handler>
+                    <Action>Collected</Action>
+                    <Location>Network Operations Center</Location>
+                    <Notes>Captured all traffic on core switch port 24</Notes>
+                    <SignedBy>Robert Chen</SignedBy>
+                </Entry>
+                
+                <Entry>
+                    <Sequence>2</Sequence>
+                    <Timestamp>2026-05-25T17:00:00Z</Timestamp>
+                    <Handler>Jane Smith</Handler>
+                    <Action>Transferred</Action>
+                    <Location>Forensics Lab - Network Analysis</Location>
+                    <Notes>Transferred for secure analysis</Notes>
+                    <SignedBy>Jane Smith</SignedBy>
+                </Entry>
+            </ChainOfCustody>
+            
+            <AnalysisResults>
+                <Summary>Captured 12,847 packets. Identified suspicious traffic patterns.</Summary>
+                <KeyFindings>
+                    <Finding>
+                        <Description>Suspicious outbound traffic to external IP</Description>
+                        <DestinationIP>203.0.113.45</DestinationIP>
+                        <Port>443 (HTTPS)</Port>
+                        <DataExfiltrated>~500 MB</DataExfiltrated>
+                        <Severity>Critical</Severity>
+                    </Finding>
+                    <Finding>
+                        <Description>Multiple failed RDP connection attempts</Description>
+                        <SourceIP>10.0.0.5</SourceIP>
+                        <DestinationIP>192.168.1.100</DestinationIP>
+                        <Count>1,247</Count>
+                        <Severity>High</Severity>
+                    </Finding>
+                </KeyFindings>
+                
+                <Protocols>
+                    <Protocol>
+                        <Name>HTTP</Name>
+                        <Packets>3,847</Packets>
+                        <Percentage>29.9%</Percentage>
+                    </Protocol>
+                    <Protocol>
+                        <Name>HTTPS</Name>
+                        <Packets>5,234</Packets>
+                        <Percentage>40.7%</Percentage>
+                    </Protocol>
+                    <Protocol>
+                        <Name>RDP</Name>
+                        <Packets>1,247</Packets>
+                        <Percentage>9.7%</Percentage>
+                    </Protocol>
+                    <Protocol>
+                        <Name>DNS</Name>
+                        <Packets>1,284</Packets>
+                        <Percentage>10.0%</Percentage>
+                    </Protocol>
+                    <Protocol>
+                        <Name>Other</Name>
+                        <Packets>1,235</Packets>
+                        <Percentage>9.6%</Percentage>
+                    </Protocol>
+                </Protocols>
+            </AnalysisResults>
+        </EvidenceItem>
+
+        <!-- EVIDENCE ITEM 3: EMAIL EVIDENCE -->
+        <EvidenceItem id="EVID-20260525-003">
+            <Type>Email Communication</Type>
+            <Description>Phishing email received by victim</Description>
+            <Source>Email Server Logs (Exchange)</Source>
+            
+            <CollectionDetails>
+                <CollectedBy>John Doe</CollectedBy>
+                <CollectionTime>2026-05-25T17:00:00Z</CollectionTime>
+                <CollectionMethod>Email Export (PST Format)</CollectionMethod>
+                <ImageHash>
+                    <Algorithm>SHA-256</Algorithm>
+                    <Value>0D1E2F3A4B5C6D7E8F9A0B1C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A8B9C0D</Value>
+                </ImageHash>
+                <ImageSize>15 MB</ImageSize>
+            </CollectionDetails>
+            
+            <CryptographicProtection>
+                <Signature>
+                    <Algorithm>RSA-PSS</Algorithm>
+                    <Value>
+                        MIIB2QYJKoZIhvcNAQcCoIIByjCCAcYCAQExDzANBglghkgBZQMEAgEF...
+                    </Value>
+                    <Timestamp>
+                        <Time>2026-05-25T17:05:00Z</Time>
+                        <TSA>National Time Stamping Authority</TSA>
+                    </Timestamp>
+                </Signature>
+                <Hash>
+                    <Algorithm>SHA-256</Algorithm>
+                    <Value>0D1E2F3A4B5C6D7E8F9A0B1C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A8B9C0D</Value>
+                    <Verified>true</Verified>
+                    <VerificationTime>2026-05-26T08:45:00Z</VerificationTime>
+                </Hash>
+            </CryptographicProtection>
+            
+            <ChainOfCustody>
+                <Entry>
+                    <Sequence>1</Sequence>
+                    <Timestamp>2026-05-25T17:00:00Z</Timestamp>
+                    <Handler>John Doe</Handler>
+                    <Action>Collected</Action>
+                    <Location>Email Server Room</Location>
+                    <Notes>Exported all emails from victim's mailbox</Notes>
+                    <SignedBy>John Doe</SignedBy>
+                </Entry>
+            </ChainOfCustody>
+            
+            <AnalysisResults>
+                <EmailMetadata>
+                    <Sender>security@secure-bank-verify.com</Sender>
+                    <Recipient>victim@company.com</Recipient>
+                    <Subject>⚠️ Urgent: Account Verification Required</Subject>
+                    <DateSent>2026-05-24T14:30:00Z</DateSent>
+                    <SPFResult>Fail (spoofed)</SPFResult>
+                    <DKIMResult>Fail (invalid signature)</DKIMResult>
+                    <DMARCResult>Fail (policy: reject)</DMARCResult>
+                    <CertificateValidation>
+                        <Valid>false</Valid>
+                        <Reason>Certificate from untrusted CA (self-signed)</Reason>
+                    </CertificateValidation>
+                </EmailMetadata>
+                
+                <SuspiciousIndicators>
+                    <Indicator>
+                        <Type>Domain Spoofing</Type>
+                        <Value>secure-bank-verify.com</Value>
+                        <Confidence>High</Confidence>
+                    </Indicator>
+                    <Indicator>
+                        <Type>Malicious Link</Type>
+                        <Value>http://malicious-site.xyz/verify</Value>
+                        <Confidence>High</Confidence>
+                    </Indicator>
+                    <Indicator>
+                        <Type>Certificate Self-Signed</Type>
+                        <Value>SSL/TLS certificate validation failed</Value>
+                        <Confidence>High</Confidence>
+                    </Indicator>
+                </SuspiciousIndicators>
+            </AnalysisResults>
+        </EvidenceItem>
+    </EvidenceItems>
+
+    <!-- ============================================================ -->
+    <!-- FORENSIC TOOLS AND METHODOLOGY                                -->
+    <!-- ============================================================ -->
+    <ForensicTools>
+        <Tool>
+            <Name>FTK Imager</Name>
+            <Version>4.7.1</Version>
+            <Vendor>AccessData</Vendor>
+            <Purpose>Forensic Imaging</Purpose>
+        </Tool>
+        <Tool>
+            <Name>Wireshark</Name>
+            <Version>4.2.5</Version>
+            <Vendor>Wireshark Foundation</Vendor>
+            <Purpose>Network Packet Analysis</Purpose>
+        </Tool>
+        <Tool>
+            <Name>X-Ways Forensics</Name>
+            <Version>20.5</Version>
+            <Vendor>X-Ways</Vendor>
+            <Purpose>Digital Forensics Analysis</Purpose>
+        </Tool>
+        <Tool>
+            <Name>OpenSSL</Name>
+            <Version>3.1.0</Version>
+            <Vendor>OpenSSL Foundation</Vendor>
+            <Purpose>PKI Operations (Key Generation, Signing)</Purpose>
+        </Tool>
+    </ForensicTools>
+
+    <!-- ============================================================ -->
+    <!-- EXPERT WITNESS / CERTIFICATION                                -->
+    <!-- ============================================================ -->
+    <ExpertWitness>
+        <Name>Dr. Sarah Johnson</Name>
+        <Title>Lead Forensic Investigator</Title>
+        <Organization>National Cyber Forensics Unit</Organization>
+        <Certifications>
+            <Certification>Certified Computer Forensics Examiner (CCFE)</Certification>
+            <Certification>Certified Information Systems Security Professional (CISSP)</Certification>
+            <Certification>GIAC Certified Forensic Analyst (GCFA)</Certification>
+        </Certifications>
+        
+        <Statement>
+            I hereby certify that the evidence presented in this report is complete,
+            accurate, and has been handled in accordance with established forensic
+            procedures and chain of custody requirements. All cryptographic signatures
+            and PKI operations have been verified and are valid to the best of my knowledge.
+        </Statement>
+        
+        <Signature>
+            <Algorithm>RSA-PSS</Algorithm>
+            <Value>
+                MIIB2QYJKoZIhvcNAQcCoIIByjCCAcYCAQExDzANBglghkgBZQMEAgEF...
+            </Value>
+            <Timestamp>
+                <Time>2026-05-26T10:30:00Z</Time>
+                <TSA>National Time Stamping Authority</TSA>
+            </Timestamp>
+        </Signature>
+    </ExpertWitness>
+
+    <!-- ============================================================ -->
+    <!-- FINAL VERIFICATION AND SEAL                                   -->
+    <!-- ============================================================ -->
+    <FinalVerification>
+        <VerifiedBy>Dr. Sarah Johnson</VerifiedBy>
+        <VerificationTime>2026-05-26T10:30:00Z</VerificationTime>
+        <Status>Passed</Status>
+        <OverallIntegrity>
+            <AllEvidenceVerified>true</AllEvidenceVerified>
+            <ChainOfCustodyIntact>true</ChainOfCustodyIntact>
+            <PKICertificatesValid>true</PKICertificatesValid>
+            <DigitalSignaturesValid>true</DigitalSignaturesValid>
+        </OverallIntegrity>
+        
+        <Seal>
+            <Algorithm>RSA-PSS</Algorithm>
+            <Value>
+                MIIB2QYJKoZIhvcNAQcCoIIByjCCAcYCAQExDzANBglghkgBZQMEAgEF...
+            </Value>
+            <Timestamp>
+                <Time>2026-05-26T10:30:00Z</Time>
+                <TSA>National Time Stamping Authority</TSA>
+            </Timestamp>
+        </Seal>
+    </FinalVerification>
+
+</ForensicReport>
