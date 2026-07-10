@@ -686,3 +686,18 @@ game.start().catch(err => {
 });
 
 module.exports = CyberForensicsGame;
+
+
+
+
+
+
+
+
+
+//And for anyone who wouldn't know how to run it
+# 1. Install Node.js (if not already installed)
+# 2. Save the code as cyber-forensics-game.js
+# 3. Open terminal
+cd /path/to/your/file -> location where u saved your file
+node cyber-forensics-game.js
