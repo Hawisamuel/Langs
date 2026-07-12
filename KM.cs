@@ -103,7 +103,6 @@ public class KeyManager : IDisposable
 
         return keyManager;
     }
-
     private static string ExportKeyToPem(byte[] keyData, string label)
     {
         var base64 = Convert.ToBase64String(keyData);
@@ -125,4 +124,20 @@ public class KeyManager : IDisposable
         PrivateKey?.Dispose();
         PublicKey?.Dispose();
     }
+     private static string ExportKeyToPem(byte[] keyData, string label)
+    {
+        var base64 = Convert.ToBase64String(keyData);
+        var sb = new StringBuilder();
+        sb.AppendLine($"-----BEGIN {label}-----");
+        
+        for (int i = 0; i < base64.Length; i += 64)
+        {
+            var chunkLength = Math.Min(64, base64.Length - i);
+            sb.AppendLine(base64.Substring(i, chunkLength));
+        }
+        
+        sb.AppendLine($"-----END {label}-----");
+        return sb.ToString();
+    }
+
 }
